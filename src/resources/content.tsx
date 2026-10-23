@@ -6,7 +6,7 @@ const person: Person = {
   lastName: "Mohammed",
   name: "Aya Mohammed",
   role: ".NET Backend Developer | Software Engineer | AI Enthusiast",
-  avatar: "",
+  avatar: "/images/aya-profile.jpg",
   email: "sdeveloper140@gmail.com",
   location: "Africa/Cairo",
   languages: ["English"],
@@ -75,7 +75,7 @@ const about: About = {
     subItems: false,
   },
   avatar: {
-    display: false,
+    display: true,
   },
   calendar: { display: false, link: "" },
   intro: {

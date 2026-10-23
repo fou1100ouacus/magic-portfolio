@@ -2,7 +2,6 @@ import {
   Heading,
   Text,
   Button,
-  Avatar,
   RevealFx,
   Column,
   Badge,
@@ -15,6 +14,8 @@ import { home, about, person, baseURL, routes } from "@/resources";
 import { Newsletter } from "@/components";
 import { Projects } from "@/components/work/Projects";
 import { Posts } from "@/components/blog/Posts";
+import Image from "next/image";
+import styles from "./home.module.scss";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -28,7 +29,7 @@ export async function generateMetadata() {
 
 export default function Home() {
   return (
-    <Column maxWidth="m" gap="xl" paddingY="12" horizontal="center">
+    <Column maxWidth="l" gap="xl" paddingY="xl" horizontal="center">
       <Schema
         as="webPage"
         baseURL={baseURL}
@@ -42,15 +43,19 @@ export default function Home() {
           image: `${baseURL}${person.avatar}`,
         }}
       />
-      <Column fillWidth horizontal="center" gap="m">
-        <Column maxWidth="s" horizontal="center" align="center">
+      <RevealFx fillWidth translateY="12">
+        <Row
+          className={styles.hero}
+          fillWidth
+          gap="xl"
+          vertical="center"
+          s={{ direction: "column-reverse", gap: "32" }}
+        >
+          <Column className={styles.heroContent} fillWidth flex={1} gap="m">
           {home.featured.display && (
             <RevealFx
               fillWidth
-              horizontal="center"
-              paddingTop="16"
-              paddingBottom="32"
-              paddingLeft="12"
+              paddingBottom="8"
             >
               <Badge
                 background="brand-alpha-weak"
@@ -65,42 +70,55 @@ export default function Home() {
               </Badge>
             </RevealFx>
           )}
-          <RevealFx translateY="4" fillWidth horizontal="center" paddingBottom="16">
+          <RevealFx translateY="4" fillWidth paddingBottom="8">
             <Heading wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>
-          <RevealFx translateY="8" delay={200} fillWidth horizontal="center" paddingBottom="32">
+          <RevealFx translateY="8" delay={200} fillWidth paddingBottom="8">
             <Text wrap="balance" onBackground="neutral-weak" variant="heading-default-xl">
               {home.subline}
             </Text>
           </RevealFx>
-          <RevealFx paddingTop="12" delay={400} horizontal="center" paddingLeft="12">
-            <Button
-              id="about"
-              data-border="rounded"
-              href={about.path}
-              variant="secondary"
-              size="m"
-              weight="default"
-              arrowIcon
-            >
-              <Row gap="8" vertical="center" paddingRight="4">
-                {about.avatar.display && (
-                  <Avatar
-                    marginRight="8"
-                    style={{ marginLeft: "-0.75rem" }}
-                    src={person.avatar}
-                    size="m"
-                    aria-hidden
-                  />
-                )}
-                {about.title}
-              </Row>
-            </Button>
+          <RevealFx delay={300}>
+            <Row gap="12" wrap paddingTop="8">
+              <Button href="/work" variant="primary" size="m" arrowIcon>
+                Explore my projects
+              </Button>
+              <Button href={`mailto:${person.email}`} variant="secondary" size="m">
+                Get in touch
+              </Button>
+            </Row>
           </RevealFx>
-        </Column>
-      </Column>
+          <Row wrap gap="8" paddingTop="m">
+            {["C#", "ASP.NET Core", "SQL Server", "AI enthusiast"].map((skill) => (
+              <Badge key={skill} background="neutral-alpha-weak" onBackground="neutral-strong">
+                {skill}
+              </Badge>
+            ))}
+          </Row>
+          </Column>
+          <Column className={styles.portraitColumn} flex={0.8} horizontal="center">
+            <div className={styles.portraitFrame}>
+              <Image
+                className={styles.portrait}
+                src={person.avatar}
+                alt="Aya Mohammed's illustrated profile avatar"
+                fill
+                priority
+                sizes="(max-width: 768px) 72vw, 320px"
+              />
+              <div className={styles.portraitCaption}>
+                <span className={styles.statusDot} />
+                <span>
+                  <strong>Aya Mohammed</strong>
+                  <small>.NET Backend Developer</small>
+                </span>
+              </div>
+            </div>
+          </Column>
+        </Row>
+      </RevealFx>
       <RevealFx translateY="16" delay={600}>
         <Projects range={[1, 1]} />
       </RevealFx>
