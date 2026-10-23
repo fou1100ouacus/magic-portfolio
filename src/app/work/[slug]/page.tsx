@@ -121,7 +121,23 @@ export default async function Project({
         </Row>
       </Row>
       {post.metadata.images.length > 0 && (
-        <Media priority aspectRatio="16 / 9" radius="m" alt="image" src={post.metadata.images[0]} />
+        <Column fillWidth gap="m">
+          {post.metadata.images.map((image, index) => (
+            <Media
+              key={image}
+              priority={index === 0}
+              aspectRatio="16 / 9"
+              radius="m"
+              alt={`${post.metadata.title} screenshot ${index + 1}`}
+              src={image}
+            />
+          ))}
+        </Column>
+      )}
+      {post.metadata.link && (
+        <SmartLink href={post.metadata.link} suffixIcon="arrowUpRightFromSquare">
+          <Text variant="body-default-s">View project on GitHub</Text>
+        </SmartLink>
       )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
@@ -131,7 +147,7 @@ export default async function Project({
         <Heading as="h2" variant="heading-strong-xl" marginBottom="24">
           Related projects
         </Heading>
-        <Projects exclude={[post.slug]} range={[2]} />
+        <Projects exclude={[post.slug]} />
       </Column>
       <ScrollToHash />
     </Column>

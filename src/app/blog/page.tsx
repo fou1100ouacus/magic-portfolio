@@ -1,7 +1,6 @@
 import { Column, Heading, Meta, Schema } from "@once-ui-system/core";
-import { Newsletter } from "@/components";
 import { Posts } from "@/components/blog/Posts";
-import { baseURL, blog, person, newsletter } from "@/resources";
+import { baseURL, blog, person } from "@/resources";
 
 export async function generateMetadata() {
   return Meta.generate({
@@ -33,13 +32,7 @@ export default function Blog() {
         {blog.title}
       </Heading>
       <Column fillWidth flex={1} gap="40" s={{ gap: "24" }}>
-        <Posts range={[1, 1]} thumbnail />
-        <Posts range={[2, 3]} columns="2" thumbnail direction="column" />
-        <Newsletter marginBottom="l" />
-        <Heading as="h2" variant="heading-strong-xl" marginLeft="l">
-          Earlier posts
-        </Heading>
-        <Posts range={[4]} columns="2" />
+        <Posts columns="2" thumbnail direction="column" />
       </Column>
     </Column>
   );
