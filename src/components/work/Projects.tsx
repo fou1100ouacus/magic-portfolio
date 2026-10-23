@@ -16,6 +16,13 @@ export function Projects({ range, exclude }: ProjectsProps) {
   }
 
   const sortedProjects = allProjects.sort((a, b) => {
+    const orderA = a.metadata.featuredOrder;
+    const orderB = b.metadata.featuredOrder;
+    if (orderA !== undefined || orderB !== undefined) {
+      if (orderA === undefined) return 1;
+      if (orderB === undefined) return -1;
+      if (orderA !== orderB) return orderA - orderB;
+    }
     if (a.metadata.featured !== b.metadata.featured) {
       return a.metadata.featured ? -1 : 1;
     }

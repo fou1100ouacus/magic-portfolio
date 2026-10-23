@@ -15,6 +15,7 @@ type Metadata = {
   publishedAt: string;
   summary: string;
   featured?: boolean;
+  featuredOrder?: number;
   image?: string;
   images: string[];
   tag?: string;
