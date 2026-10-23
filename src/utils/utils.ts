@@ -14,6 +14,7 @@ type Metadata = {
   subtitle?: string;
   publishedAt: string;
   summary: string;
+  featured?: boolean;
   image?: string;
   images: string[];
   tag?: string;
