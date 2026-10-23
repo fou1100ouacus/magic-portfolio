@@ -98,7 +98,7 @@ export default function Home() {
             ))}
           </Row>
           </Column>
-          <Column className={styles.portraitColumn} flex={0.8} horizontal="center">
+          <Column className={styles.portraitColumn} flex={1} horizontal="center">
             <div className={styles.portraitFrame}>
               <Image
                 className={styles.portrait}
