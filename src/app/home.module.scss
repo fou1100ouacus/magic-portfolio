@@ -34,6 +34,12 @@
   max-width: 42rem;
 }
 
+.heroHeadline {
+  max-width: 15ch;
+  font-size: clamp(2.75rem, 5.5vw, 4.5rem);
+  line-height: 1.05;
+}
+
 .portraitColumn {
   position: relative;
   z-index: 1;
@@ -109,5 +115,11 @@
 
   .portraitCaption {
     left: -0.75rem;
+  }
+
+  .heroHeadline {
+    max-width: 18ch;
+    font-size: clamp(2.35rem, 10vw, 3.5rem);
+    line-height: 1.08;
   }
 }

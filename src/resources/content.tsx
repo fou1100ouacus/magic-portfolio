@@ -87,9 +87,22 @@ const about: About = {
     ),
   },
   work: {
-    display: false,
+    display: true,
     title: "Experience",
-    experiences: [],
+    experiences: [
+      {
+        company: "Huma Valve",
+        timeframe: "Oct 2026 – Present · Remote",
+        role: "Junior Backend .NET Developer · Internship",
+        achievements: [],
+      },
+      {
+        company: "SpaceTech",
+        timeframe: "Sep 2026 · Alexandria, Egypt · Remote",
+        role: "Associate Software Engineer · Internship",
+        achievements: [],
+      },
+    ],
   },
   studies: {
     display: true, // set to false to hide this section

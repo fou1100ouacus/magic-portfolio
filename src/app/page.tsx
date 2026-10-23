@@ -71,7 +71,7 @@ export default function Home() {
             </RevealFx>
           )}
           <RevealFx translateY="4" fillWidth paddingBottom="8">
-            <Heading wrap="balance" variant="display-strong-l">
+            <Heading className={styles.heroHeadline} wrap="balance" variant="display-strong-l">
               {home.headline}
             </Heading>
           </RevealFx>
