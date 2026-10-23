@@ -91,7 +91,7 @@ export default function Home() {
             </Row>
           </RevealFx>
           <Row wrap gap="8" paddingTop="m">
-            {["C#", "ASP.NET Core", "SQL Server", "AI enthusiast"].map((skill) => (
+            {["C#", "ASP.NET Core", "SQL Server", "AI Business Analysis", "MLOps", "Prompt Engineering"].map((skill) => (
               <Badge key={skill} background="neutral-alpha-weak" onBackground="neutral-strong">
                 {skill}
               </Badge>
@@ -103,7 +103,7 @@ export default function Home() {
               <Image
                 className={styles.portrait}
                 src={person.avatar}
-                alt="Aya Mohammed's illustrated profile avatar"
+                alt="Aya Mohamed's illustrated profile avatar"
                 fill
                 priority
                 sizes="(max-width: 768px) 72vw, 320px"
@@ -111,8 +111,8 @@ export default function Home() {
               <div className={styles.portraitCaption}>
                 <span className={styles.statusDot} />
                 <span>
-                  <strong>Aya Mohammed</strong>
-                  <small>.NET Backend Developer</small>
+                  <strong>Aya Mohamed</strong>
+                  <small>Software Engineer · .NET · AI</small>
                 </span>
               </div>
             </div>

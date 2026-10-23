@@ -3,9 +3,9 @@ import { Line, Row, Text } from "@once-ui-system/core";
 
 const person: Person = {
   firstName: "Aya",
-  lastName: "Mohammed",
-  name: "Aya Mohammed",
-  role: ".NET Backend Developer | Software Engineer | AI Enthusiast",
+  lastName: "Mohamed",
+  name: "Aya Mohamed",
+  role: "Software Engineer | Backend .NET | AI Business Analyst | MLOps Engineer | Prompt Engineer",
   avatar: "/images/aya-profile.jpg",
   email: "sdeveloper140@gmail.com",
   location: "Africa/Cairo",
@@ -39,11 +39,11 @@ const social: Social = [
 
 const home: Home = {
   path: "/",
-  image: "/api/og/generate?title=Aya%20Mohammed%20%7C%20.NET%20Backend%20Developer",
+  image: "/api/og/generate?title=Aya%20Mohamed%20%7C%20Software%20Engineer%20%26%20AI",
   label: "Home",
   title: `${person.name}'s Portfolio`,
   description: `Portfolio website showcasing my work as a ${person.role}`,
-  headline: <>Building scalable solutions, one line of code at a time.</>,
+  headline: <>Scalable backends. Thoughtful AI. Real-world impact.</>,
   featured: {
     display: true,
     title: (
@@ -59,8 +59,9 @@ const home: Home = {
   },
   subline: (
     <>
-      I'm {person.firstName}, a .NET backend developer passionate about scalable software, clean
-      architecture, and the future of AI. I build secure APIs and keep learning every day.
+      I'm {person.firstName}, a software engineer focused on .NET backend development and
+      interested in AI business analysis, MLOps, and prompt engineering. I build secure, scalable
+      applications and explore how thoughtful AI can solve practical problems.
     </>
   ),
 };

@@ -13,7 +13,7 @@ export async function generateMetadata() {
 export default function ContactPage() {
   return (
     <Column maxWidth="s" paddingTop="24" gap="l">
-      <Schema as="webPage" baseURL={baseURL} path="/contact" title={`Contact – ${person.name}`} description="Contact Aya Mohammed." author={{ name: person.name, url: `${baseURL}/about`, image: baseURL }} />
+    <Schema as="webPage" baseURL={baseURL} path="/contact" title={`Contact – ${person.name}`} description={`Contact ${person.name}.`} author={{ name: person.name, url: `${baseURL}/about`, image: baseURL }} />
       <Heading variant="display-strong-s">Let's connect</Heading>
       <Text onBackground="neutral-weak">I am interested in backend development, software engineering, and AI. Reach out by email or find my code on GitHub.</Text>
       <Button href={`mailto:${person.email}`} size="m" variant="primary">{person.email}</Button>
