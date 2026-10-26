@@ -16,7 +16,6 @@ export default function CertificatesPage() {
       <Schema as="webPage" baseURL={baseURL} path="/certificates" title={`Certificates & Training – ${person.name}`} description="Education and backend development training." author={{ name: person.name, url: `${baseURL}/about`, image: baseURL }} />
       <Column gap="m">
         <Heading variant="display-strong-s">Certificates & Training</Heading>
-        <Text onBackground="neutral-weak">My CV lists these academic and structured learning experiences. Individual certificate details can be added when available.</Text>
       </Column>
       <Column gap="8">
         <Heading as="h2" variant="heading-strong-l">Backend Development Training</Heading>

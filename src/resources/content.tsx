@@ -30,6 +30,12 @@ const social: Social = [
     essential: true,
   },
   {
+    name: "LinkedIn",
+    icon: "linkedin",
+    link: "https://www.linkedin.com/",
+    essential: true,
+  },
+  {
     name: "Email",
     icon: "email",
     link: `mailto:${person.email}`,
