@@ -21,7 +21,6 @@ import { formatDate } from "@/utils/formatDate";
 import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
-import { RedactedProjectMedia } from "@/components/RedactedProjectMedia";
 
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
@@ -124,26 +123,14 @@ export default async function Project({
       {post.metadata.images.length > 0 && (
         <Column fillWidth gap="m">
           {post.metadata.images.map((image, index) => (
-            post.metadata.redactImages ? (
-              <RedactedProjectMedia key={image}>
-                <Media
-                  priority={index === 0}
-                  aspectRatio="16 / 9"
-                  radius="m"
-                  alt={`${post.metadata.title} screenshot ${index + 1}`}
-                  src={image}
-                />
-              </RedactedProjectMedia>
-            ) : (
-              <Media
-                key={image}
-                priority={index === 0}
-                aspectRatio="16 / 9"
-                radius="m"
-                alt={`${post.metadata.title} screenshot ${index + 1}`}
-                src={image}
-              />
-            )
+            <Media
+              key={image}
+              priority={index === 0}
+              aspectRatio="16 / 9"
+              radius="m"
+              alt={`${post.metadata.title} screenshot ${index + 1}`}
+              src={image}
+            />
           ))}
         </Column>
       )}
