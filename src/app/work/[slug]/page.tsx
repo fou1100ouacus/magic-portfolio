@@ -25,7 +25,6 @@ import { Projects } from "@/components/work/Projects";
 const projectImageAspectRatios: Record<string, string> = {
   "/images/projects/mechanic-shop/dashboard.png": "1224 / 756",
   "/images/projects/mechanic-shop/customers.png": "1224 / 703",
-  "/images/projects/mechanic-shop/create-customer.png": "1224 / 703",
   "/images/projects/mechanic-shop/repair-tasks.png": "1224 / 1201",
   "/images/projects/mechanic-shop/create-repair-task.png": "1224 / 1201",
   "/images/projects/mechanic-shop/schedules.png": "1224 / 2896",
