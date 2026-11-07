@@ -1,0 +1,36 @@
+.frame {
+  position: relative;
+  overflow: hidden;
+  border-radius: 1rem;
+  isolation: isolate;
+}
+
+.media {
+  width: 100%;
+  filter: blur(12px);
+  transform: scale(1.04);
+  pointer-events: none;
+}
+
+.cover {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  padding: 1rem;
+  background: color-mix(in srgb, var(--page-background) 16%, transparent);
+  pointer-events: none;
+}
+
+.label {
+  max-width: 100%;
+  padding: 0.5rem 1rem;
+  border: 1px solid var(--brand-alpha-strong);
+  border-radius: 999px;
+  background: color-mix(in srgb, var(--page-background) 88%, transparent);
+  color: var(--neutral-on-background-strong);
+  font-size: 0.95rem;
+  line-height: 1.4;
+  text-align: center;
+  backdrop-filter: blur(0.5rem);
+}

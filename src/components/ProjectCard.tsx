@@ -9,6 +9,7 @@ import {
   SmartLink,
   Text,
 } from "@once-ui-system/core";
+import { RedactedProjectMedia } from "@/components/RedactedProjectMedia";
 
 interface ProjectCardProps {
   href: string;
@@ -21,6 +22,7 @@ interface ProjectCardProps {
   avatars: { src: string; "aria-label"?: string }[];
   link: string;
   demoLink?: string;
+  redactImages?: boolean;
 }
 
 export const ProjectCard: React.FC<ProjectCardProps> = ({
@@ -32,18 +34,20 @@ export const ProjectCard: React.FC<ProjectCardProps> = ({
   avatars,
   link,
   demoLink,
+  redactImages = false,
 }) => {
+  const gallery = images.length > 0 && (
+    <Carousel
+      sizes="(max-width: 960px) 100vw, 960px"
+      items={images.map((image) => ({ slide: image, alt: title }))}
+    />
+  );
+
   return (
     <Column fillWidth gap="m">
-      {images.length > 0 && (
-        <Carousel
-          sizes="(max-width: 960px) 100vw, 960px"
-          items={images.map((image) => ({
-            slide: image,
-            alt: title,
-          }))}
-        />
-      )}
+      {gallery && (redactImages ? (
+        <RedactedProjectMedia>{gallery}</RedactedProjectMedia>
+      ) : gallery)}
       <Flex
         s={{ direction: "column" }}
         fillWidth

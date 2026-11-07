@@ -22,6 +22,7 @@ type Metadata = {
   team: Team[];
   link?: string;
   demoLink?: string;
+  redactImages?: boolean;
 };
 
 import { notFound } from "next/navigation";
@@ -53,6 +54,7 @@ function readMDXFile(filePath: string) {
     team: data.team || [],
     link: data.link || "",
     demoLink: data.demoLink || "",
+    redactImages: data.redactImages === true,
   };
 
   return { metadata, content };
