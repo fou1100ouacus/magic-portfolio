@@ -139,6 +139,11 @@ export default async function Project({
           <Text variant="body-default-s">View project on GitHub</Text>
         </SmartLink>
       )}
+      {post.metadata.demoLink && (
+        <SmartLink href={post.metadata.demoLink} suffixIcon="arrowUpRightFromSquare">
+          <Text variant="body-default-s">View Demo</Text>
+        </SmartLink>
+      )}
       <Column style={{ margin: "auto" }} as="article" maxWidth="xs">
         <CustomMDX source={post.content} />
       </Column>
