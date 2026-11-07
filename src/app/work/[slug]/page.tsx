@@ -22,6 +22,18 @@ import { ScrollToHash, CustomMDX } from "@/components";
 import { Metadata } from "next";
 import { Projects } from "@/components/work/Projects";
 
+const projectImageAspectRatios: Record<string, string> = {
+  "/images/projects/mechanic-shop/dashboard.png": "1224 / 756",
+  "/images/projects/mechanic-shop/customers.png": "1224 / 703",
+  "/images/projects/mechanic-shop/create-customer.png": "1224 / 703",
+  "/images/projects/mechanic-shop/repair-tasks.png": "1224 / 1201",
+  "/images/projects/mechanic-shop/create-repair-task.png": "1224 / 1201",
+  "/images/projects/mechanic-shop/schedules.png": "1224 / 2896",
+  "/images/projects/mechanic-shop/workorder-details-completed.png": "1224 / 1049",
+  "/images/projects/mechanic-shop/workorder-details-cancelled.png": "1224 / 931",
+  "/images/projects/mechanic-shop/workorders.png": "1224 / 965",
+};
+
 export async function generateStaticParams(): Promise<{ slug: string }[]> {
   const posts = getPosts(["src", "app", "work", "projects"]);
   return posts.map((post) => ({
@@ -126,7 +138,7 @@ export default async function Project({
             <Media
               key={image}
               priority={index === 0}
-              aspectRatio="16 / 9"
+              aspectRatio={projectImageAspectRatios[image] || "16 / 9"}
               radius="m"
               alt={`${post.metadata.title} screenshot ${index + 1}`}
               src={image}
