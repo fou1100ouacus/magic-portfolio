@@ -204,6 +204,33 @@ export default function About() {
             </Column>
           )}
 
+          <Row
+            fillWidth
+            border="brand-alpha-medium"
+            background="brand-alpha-weak"
+            radius="l"
+            padding="l"
+            gap="m"
+            vertical="center"
+            horizontal="between"
+            marginBottom="xl"
+            s={{ direction: "column", horizontal: "center", align: "center" }}
+          >
+            <Column gap="4">
+              <Text variant="heading-strong-m">Want to know more about my experience?</Text>
+              <Text variant="body-default-s" onBackground="neutral-weak">
+                Download my CV for a summary of my skills, education, and experience.
+              </Text>
+            </Column>
+            <Button
+              href="/cv/Aya-Mohamed-Awaad-CV.pdf"
+              prefixIcon="download"
+              label="Download CV"
+              size="m"
+              variant="primary"
+            />
+          </Row>
+
           {about.work.display && (
             <>
               <Heading as="h2" id={about.work.title} variant="display-strong-s" marginBottom="m">
